@@ -2,7 +2,7 @@
 layout: post
 title:  "Tennis"
 date:   2020-09-18 11:16:41 +0200
-categories: stats
+categories: stuff
 ---
 {% raw %}
 
@@ -67,7 +67,7 @@ $$
 
 ## Probability of winning a set 6-3
 
-We've done the heavy lifting. Again, noting that Player A has to win the ninth game, there are $${{8}\choose{3}}$$ valid arrangements of the previous games for this score line.
+We've done the heavy lifting. Noting that Player A has to win the ninth game, there are $${{8}\choose{3}}$$ valid arrangements of the previous games for this score line.
 
 
 $$
