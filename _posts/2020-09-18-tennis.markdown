@@ -3,11 +3,78 @@ layout: post
 title:  "Tennis"
 categories: stats
 ---
-Here's a fun probability puzzle I came across. Tennis has a scoring system composed of points, games, and sets. For this puzzle you just need to know that a player wins a game if he scores 4 points and has at least a 2-point lead over his opponent. A score line of 3-3 is called *deuce*, and from there a player has to score 2 points in a row to win the game. Once a player has won 6 games and has a 2-game lead over his opponent, he wins the set.
+{% raw %}
 
-***If a player has a 0.54 probability of scoring against his opponent, what is the probability that he wins the set 6-3?***
+Tennis has a scoring system composed of points, games, and sets. For this puzzle you just need to know that a player wins a game if he scores 4 points and has at least a 2-point lead over his opponent. A score line of 3-3 is called *deuce*, and from there a player has to score 2 points in a row to win the game. Once a player has won 6 games and has a 2-game lead over his opponent, he wins the set.
 
-$$test$$ 
+***Player A is up against Player B. If Player A has a constant probability $$p$$ of scoring a point against Player B, what is the probability that he wins the set 6-3?***
 
-$$f_2(x) = 3262 + \sqrt{9}$$
+For clarity, let's write the odds of Player B scoring as $$q = 1 - p$$.
+
+There are four scenarios for Player A to win a game.
+
+1. He wins 4-0.
+2. He wins 4-1.
+3. He wins 4-2.
+4. The players reach deuce, and Player A ends up breaking it.
+
+The probability of Player A winning a game is then the sum of the probabilities of these four scenarios.
+
+## Scenarios 1-3: No deuce
+
+These are simple to compute. 
+
+The probability of winning 4-0 is clearly $$p^4$$.
+
+The probability of winning 4-1 is $${{4}\choose{1}} p^4 q$$, as there are $${{4}\choose{1}}$$ possible 4-point sequences where Player A scores 3 times and Player B scores once. Of course, the fifth and final point has to be scored by Player A.
+
+By the same logic, the probability of winning 4-2 is $${{5}\choose{2}} p^4 q^2$$. 
+
+## Scenario 4: Deuce
+
+Deuce is a little bit trickier to handle. First let's calculate the probability of the score being 3-3. It's simply $${{6}\choose{3}} p^3 q^3$$. 
+
+From deuce, there are three different scenarios:
+
+1. Player A scores twice in a row. Probability is $$p^2$$.
+2. Player B scores twice in a row. Probability is $$q^2$$ and we can ignore this one.
+3. They both score 1 point. Probability is $$2pq$$.
+
+What makes this tricky is that the players can return to deuce an arbitrary number of times, so the probability of Player A winning after reaching a 3-3 score is an infinite series
+
+
+$$
+P(\text{Win after deuce}) = p^2 + (2pq)p^2 + (2pq)^2p^2 + (2pq)^3 p^2 + \dots
+$$
+
+
+To deal with this, just note that it has the form $$p^2 \sum_{n=0}^\infty (2pq)^n$$ and that the sum is just a geometric series (since $$-1 \leq 2pq \leq 1$$) with closed form $$(1 - 2pq)^{-1}$$. The probability of winning after deuce is thus
+
+
+$$
+P(\text{Win after deuce}) = \frac{p^2}{1 - 2pq}
+$$
+
+
+The total probability of Player A winning a game is
+
+
+$$
+P(\text{Player A wins game}) = p^4 + {{4}\choose{1}}p^4q + {{5}\choose{2}}p^4q^2 + {{6}\choose{3}}\frac{p^5q^3}{1 - 2pq}
+$$
+
+
+## Probability of winning a set 6-3
+
+We've done the heavy lifting. Again, noting that Player A has to win the ninth game, there are $${{8}\choose{3}}$$ valid arrangements of the previous games for this score line.
+
+
+$$
+P(\text{Player A wins 6-3}) = {{8}\choose{3}} P(\text{Player A wins game})^6 (1 - P(\text{Player A wins game}))^5
+$$
+
+
+Plugging in for example $$p = 0.54$$, we have $$P(\text{Player A wins 6-3}) =  0.1668148149$$ to 10 s.f.
+
+{% endraw %}
 
