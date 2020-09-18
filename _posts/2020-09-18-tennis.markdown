@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Tennis"
+categories: stats
+---
+Here's a fun probability puzzle I came across. Tennis has a scoring system composed of points, games, and sets. For this puzzle you just need to know that a player wins a game if he scores 4 points and has at least a 2-point lead over his opponent. A score line of 3-3 is called *deuce*, and from there a player has to score 2 points in a row to win the game. Once a player has won 6 games and has a 2-game lead over his opponent, he wins the set.
+
+***If a player has a 0.54 probability of scoring against his opponent, what is the probability that he wins the set 6-3?***
+
+$$test$$ 
+
+$$f_2(x) = 3262 + \sqrt{9}$$
+
