@@ -37,8 +37,8 @@ Deuce is a little bit trickier to handle. First let's calculate the probability 
 From deuce, there are three different scenarios:
 
 1. Player A scores twice in a row. Probability is $$p^2$$.
-2. Player B scores twice in a row. Probability is $$q^2$$ and we can ignore this one.
-3. They both score 1 point. Probability is $$2pq$$.
+2. Player B scores twice in a row. Probability is $$q^2$$. We can ignore this one.
+3. They both score 1 point and return to deuce. Probability is $$2pq$$.
 
 What makes this tricky is that the players can return to deuce an arbitrary number of times, so the probability of Player A winning after reaching a 3-3 score is an infinite series
 
@@ -56,7 +56,7 @@ P(\text{Win after deuce}) = \frac{p^2}{1 - 2pq}
 $$
 
 
-The total probability of Player A winning a game is
+and the total probability of Player A winning a game is
 
 
 $$
@@ -70,7 +70,7 @@ We've done the heavy lifting. Again, noting that Player A has to win the ninth g
 
 
 $$
-P(\text{Player A wins 6-3}) = {{8}\choose{3}} P(\text{Player A wins game})^6 (1 - P(\text{Player A wins game}))^5
+P(\text{Player A wins 6-3}) = {{8}\choose{3}} P(\text{Player A wins game})^6 (1 - P(\text{Player A wins game}))^3
 $$
 
 
