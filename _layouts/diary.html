@@ -9,10 +9,10 @@ layout: default
 
   {{ content }}
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Stuff" }}</h2>
+  {%- if site.posts.size > 0 -%}	
+    <h2 class="post-list-heading">{{ page.list_title | default: "Entries" }}</h2>
     <ul class="post-list">
-      {%- for post in site.categories["stuff"] -%}
+      {%- for post in site.categories["entry"] -%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -27,6 +27,7 @@ layout: default
       </li>
       {%- endfor -%}
     </ul>
+
     <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
   {%- endif -%}
 
