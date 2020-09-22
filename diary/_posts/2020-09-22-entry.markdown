@@ -1,0 +1,15 @@
+---
+layout: entry
+title:  "Tuesday 22nd"
+date:   2020-09-22 17:32:41 +0200
+categories: entry
+---
+Well, I didn't get the job. I lost a split decision and it went to another candidate. He was local, and perhaps that tipped the scales in his favour. Plus, he was particularly passionate about the subject matter (whereas for me, it would've been just a job).
+
+There's not much solace in coming in second even when the deck was stacked against you from the beginning. It's just tedious. Thankfully, I wasn't too attached to the position to begin with, but the increased purchasing power would've been nice.
+
+Anyway, it annoys me that I won't get to resign before the end of the month. My job's dull and I'm underpaid, it's hard to stay motivated. I applied for a few more, we'll see, we'll see.
+
+I have to read Jekyll docs to figure out what's actually going on under the hood as I just cobbled this website together, as quickly as I could. At the very least, I'd like a diary entries to appear as monthly listings.
+
+(Let's be honest, this tech bullshit is boring.)
